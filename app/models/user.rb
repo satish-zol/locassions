@@ -1,5 +1,8 @@
 class User
   include Mongoid::Document
+  
+  attr_accessible :name, :email, :password, :password_confirmation
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -10,14 +13,7 @@ class User
   field :name 
   field :email,              :type => String, :default => ""
   field :encrypted_password, :type => String, :default => ""
-
-  attr_accessible :name
-  
-  #validates_presence_of :name, :uniqueness => true
-  validates :name, :presence => true, :uniqueness => true
-  validates_presence_of :email
-  validates_presence_of :encrypted_password
-  
+   
   ## Recoverable
   field :reset_password_token,   :type => String
   field :reset_password_sent_at, :type => Time
@@ -45,4 +41,12 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+  
+  #associations
+  embeds_many :events
+  
+  #Validations
+  validates :name, :presence => true, :uniqueness => true
+  validates_presence_of :email
+  validates_presence_of :encrypted_password
 end

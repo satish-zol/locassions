@@ -1,8 +1,11 @@
 Locassions::Application.routes.draw do
   
-  devise_for :users
+  devise_for :users 
+    resources :events
   
-  match 'events' => 'home#index', :as => :user_root
+  
+  
+  match 'events' => 'events#index', :as => :user_root
   
    
   root :to => "home#index"

@@ -16,6 +16,7 @@ gem "rails-backbone"
 gem "jasmine"
 gem "haml", ">= 3.1.7"
 gem "haml-rails", ">= 0.3.5", :group => :development
+gem 'spork', '~> 1.0rc', :group => [:development]
 gem "hpricot", ">= 0.8.6", :group => :development
 gem "ruby_parser", ">= 2.3.1", :group => :development
 gem "rspec-rails", ">= 2.11.0", :group => [:development, :test]
@@ -34,6 +35,7 @@ gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
 gem "therubyracer", ">= 0.10.2", :group => :assets, :platform => :ruby
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
+
 #gem "debugger-linecache"
 #gem "debugger", :group => [:development, :test]
 gem 'ruby-debug19', :require => 'ruby-debug'
